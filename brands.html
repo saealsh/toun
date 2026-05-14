@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1419">
+
+<title>للعلامات التجارية | ثنيان خالد · تعاونات وحملات تسويقيّة</title>
+<meta name="description" content="منصّتك للتعاون مع ثنيان خالد. اكتشف أنواع التعاون، حالات دراسيّة لشراكات سابقة، وحمّل Media Kit الرسمي للحملات.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saealsh.github.io/toun/brands.html">
+<meta property="og:title" content="للعلامات التجارية | ثنيان خالد">
+<meta property="og:description" content="منصّتك للتعاون مع ثنيان خالد. أنواع التعاون، حالات دراسيّة، وMedia Kit الرسمي.">
+<meta property="og:image" content="https://saealsh.github.io/toun/thunayyan.jpg">
+<meta property="og:locale" content="ar_SA">
+
+<link rel="canonical" href="https://saealsh.github.io/toun/brands.html">
+<link rel="icon" type="image/jpeg" href="thunayyan.jpg">
+<link rel="apple-touch-icon" href="thunayyan.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ===== Audience Metrics ===== */
+.metrics-section{
+  padding:4rem 0;
+  background:var(--bg-soft);
+  border-block:1px solid var(--border);
+}
+.metrics-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:2.5rem;
+}
+.metric{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.6rem;
+  text-align:center;
+}
+.metric .val{
+  font-family:'Inter',sans-serif;
+  font-size:2.2rem;
+  font-weight:700;
+  color:var(--brand);
+  line-height:1;
+  margin-bottom:.4rem;
+  letter-spacing:-1px;
+  direction:ltr;
+  display:inline-block;
+}
+.metric .lbl{
+  color:var(--text-soft);
+  font-size:.88rem;
+  margin-bottom:.2rem;
+}
+.metric .src{
+  color:var(--text-muted);
+  font-size:.72rem;
+  margin-top:.5rem;
+  padding-top:.5rem;
+  border-top:1px dashed var(--border);
+}
+
+/* ===== Services ===== */
+.services-section{padding:5rem 0}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  margin-top:3rem;
+}
+.service-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:2rem;
+  position:relative;
+  transition:all .25s ease;
+}
+.service-card:hover{
+  border-color:var(--brand);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+}
+.service-num{
+  position:absolute;
+  top:1.5rem;
+  left:1.5rem;
+  font-family:'Inter',sans-serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--text-muted);
+  opacity:.3;
+  letter-spacing:-.5px;
+}
+.service-icon{
+  width:48px;height:48px;
+  border-radius:12px;
+  background:var(--brand-soft);
+  color:var(--brand);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:1.2rem;
+}
+.service-icon svg{width:22px;height:22px}
+.service-card h3{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.5rem;
+}
+.service-card p{
+  color:var(--text-soft);
+  font-size:.92rem;
+  line-height:1.8;
+  margin-bottom:1.2rem;
+}
+.service-features{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+}
+.service-features li{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.85rem;
+  color:var(--text-soft);
+}
+.service-features li svg{
+  width:14px;height:14px;
+  color:var(--brand);
+  flex-shrink:0;
+}
+
+/* ===== Case Studies ===== */
+.cases-section{
+  padding:5rem 0;
+  background:var(--bg-soft);
+  border-block:1px solid var(--border);
+}
+.cases-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+  margin-top:3rem;
+}
+.case-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:1.8rem;
+  position:relative;
+}
+.case-tag{
+  display:inline-block;
+  padding:.25rem .7rem;
+  background:var(--brand-soft);
+  color:var(--brand);
+  border-radius:6px;
+  font-size:.72rem;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+.case-logo-placeholder{
+  width:100%;
+  height:90px;
+  background:var(--bg-soft);
+  border:1px dashed var(--border);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-muted);
+  font-size:.8rem;
+  margin-bottom:1.2rem;
+}
+.case-card h3{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.5rem;
+}
+.case-card .case-desc{
+  color:var(--text-soft);
+  font-size:.88rem;
+  line-height:1.8;
+  margin-bottom:1.2rem;
+}
+.case-result{
+  padding:1rem;
+  background:var(--bg-soft);
+  border-radius:8px;
+  border-right:3px solid var(--brand);
+}
+.case-result-num{
+  font-family:'Inter',sans-serif;
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--brand);
+  line-height:1;
+  direction:ltr;
+  display:inline-block;
+}
+.case-result-lbl{
+  color:var(--text-soft);
+  font-size:.78rem;
+  margin-top:.3rem;
+}
+
+/* ===== Media Kit Section ===== */
+.mediakit-section{
+  padding:5rem 0;
+}
+.mediakit-card{
+  background:var(--accent);
+  color:var(--bg);
+  border-radius:18px;
+  padding:3rem;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:3rem;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.mediakit-card::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-20%;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);
+}
+.mediakit-content{position:relative;z-index:1}
+.mediakit-content .eyebrow{
+  color:rgba(255,255,255,.6);
+  margin-bottom:.8rem;
+}
+.mediakit-content h2{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:1rem;
+  line-height:1.3;
+}
+.mediakit-content p{
+  font-size:.98rem;
+  opacity:.85;
+  margin-bottom:2rem;
+  line-height:1.9;
+}
+.mediakit-includes{
+  list-style:none;
+  padding:0;
+  margin:0 0 2rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.6rem;
+}
+.mediakit-includes li{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.88rem;
+  opacity:.9;
+}
+.mediakit-includes li svg{
+  width:14px;height:14px;
+  color:#3fb88e;
+  flex-shrink:0;
+}
+.mediakit-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:1rem 1.8rem;
+  background:var(--bg);
+  color:var(--text);
+  border-radius:10px;
+  font-weight:700;
+  font-size:.95rem;
+  text-decoration:none;
+  transition:all .2s;
+}
+.mediakit-btn:hover{
+  background:var(--bg-soft);
+  transform:translateY(-2px);
+}
+
+.mediakit-visual{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.mediakit-preview{
+  width:200px;
+  aspect-ratio:1/1.414;
+  background:var(--bg);
+  border-radius:10px;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+  padding:1.5rem;
+  color:var(--text);
+  transform:rotate(-5deg);
+}
+.preview-header{
+  text-align:center;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--border);
+}
+.preview-header .pname{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-weight:700;
+  font-size:.95rem;
+}
+.preview-header .pkit{
+  font-size:.65rem;
+  color:var(--text-muted);
+  letter-spacing:1.5px;
+  font-family:'Inter',sans-serif;
+  margin-top:.3rem;
+}
+.preview-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.5rem;
+}
+.preview-stat{
+  text-align:center;
+  padding:.5rem;
+  background:var(--bg-soft);
+  border-radius:5px;
+}
+.preview-stat .pn{
+  font-family:'Inter',sans-serif;
+  font-size:.85rem;
+  font-weight:700;
+  color:var(--brand);
+  display:block;
+}
+.preview-stat .pl{
+  font-size:.6rem;
+  color:var(--text-muted);
+  margin-top:.1rem;
+}
+
+/* ===== Partners ===== */
+.partners-section{padding:5rem 0;background:var(--bg-soft);border-block:1px solid var(--border)}
+.partners-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:3rem;
+}
+.partner{
+  aspect-ratio:1;
+  background:var(--bg-card);
+  border:1px dashed var(--border);
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:1.2rem;
+  transition:all .25s ease;
+  text-align:center;
+}
+.partner:hover{
+  border-color:var(--brand);
+  border-style:solid;
+}
+.partner-mark{
+  width:42px;height:42px;
+  border-radius:8px;
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-muted);
+  margin-bottom:.7rem;
+}
+.partner-name{
+  font-size:.82rem;
+  color:var(--text-soft);
+  font-weight:600;
+}
+
+/* ===== Final CTA ===== */
+.brands-cta{padding:5rem 0 6rem}
+.cta-box{
+  padding:4rem 3rem;
+  background:var(--brand);
+  border-radius:18px;
+  text-align:center;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.cta-box::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  right:-20%;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);
+}
+.cta-box .eyebrow{color:rgba(255,255,255,.7);margin-bottom:1rem}
+.cta-box h2{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:clamp(1.7rem,3vw,2.3rem);
+  font-weight:700;
+  margin-bottom:1rem;
+  position:relative;
+}
+.cta-box p{
+  font-size:1rem;
+  opacity:.88;
+  margin-bottom:2.2rem;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.9;
+  position:relative;
+}
+.cta-box-actions{
+  display:flex;
+  gap:.8rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  position:relative;
+}
+.cta-box .btn-light{background:#fff;color:var(--brand)}
+.cta-box .btn-light:hover{background:var(--bg-soft)}
+.cta-box .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.cta-box .btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr;gap:.8rem}
+  .mediakit-card{grid-template-columns:1fr;gap:2rem;padding:2.5rem}
+  .partners-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:600px){
+  .metrics-grid{grid-template-columns:1fr 1fr;gap:.7rem}
+  .metric{padding:1.2rem .8rem}
+  .metric .val{font-size:1.7rem}
+  .mediakit-includes{grid-template-columns:1fr}
+  .mediakit-card{padding:2rem 1.5rem}
+  .mediakit-content h2{font-size:1.5rem}
+  .partners-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .cta-box{padding:3rem 1.8rem}
+  .cta-box-actions{flex-direction:column}
+  .cta-box-actions .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body data-page="brands">
+
+<main>
+  <div class="container">
+    <section class="page-hero">
+      <div class="breadcrumb">للعلامات التجارية</div>
+      <h1>منصّتك لشراكة <span class="accent">استراتيجيّة</span></h1>
+      <p class="lead">كلّ ما تحتاج معرفته قبل بدء حملتك التسويقيّة مع ثنيان خالد. أنواع التعاون، حالات دراسيّة، Media Kit، والتواصل المباشر.</p>
+    </section>
+  </div>
+
+  <!-- ============= مقاييس الجمهور ============= -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">مقاييس الجمهور</div>
+        <h2 class="section-title reveal">أرقام تساعدك في قرار التعاون</h2>
+        <p class="section-subtitle reveal" style="margin:0 auto">بيانات حقيقيّة محدّثة عن جمهوري ومستوى التفاعل عبر منصّاتي.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric reveal">
+          <div class="val">3.5M+</div>
+          <div class="lbl">إجمالي المشتركين</div>
+          <div class="src">YouTube · 2026</div>
+        </div>
+        <div class="metric reveal">
+          <div class="val">10M+</div>
+          <div class="lbl">جمهور تراكمي</div>
+          <div class="src">عبر جميع المنصّات</div>
+        </div>
+        <div class="metric reveal">
+          <div class="val">85%</div>
+          <div class="lbl">جمهور سعودي وخليجي</div>
+          <div class="src">تحليلات يوتيوب</div>
+        </div>
+        <div class="metric reveal">
+          <div class="val">750M+</div>
+          <div class="lbl">إجمالي المشاهدات</div>
+          <div class="src">YouTube · منذ 2010</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= أنواع التعاون ============= -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">الخدمات</div>
+        <h2 class="section-title reveal">أنواع التعاون المتاحة</h2>
+        <p class="section-subtitle reveal" style="margin:0 auto">صيغ متعدّدة من الشراكات لتلائم أهداف علامتك التجاريّة وميزانيّتك.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h3>المحتوى المموّل (Sponsored Vlog)</h3>
+          <p>إدماج علامتك التجاريّة ضمن فلوقاتي اليوميّة بطريقة سرديّة طبيعيّة لا تُشعر المتابع بأنّها إعلان تقليدي.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>فلوق كامل أو إدماج جزئي</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>مراجعة Brief مسبقاً</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تقرير أداء بعد النشر</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">02</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13l1.5 9-5-3-5 3 1.5-9"/></svg>
+          </div>
+          <h3>السفير الرسمي (Brand Ambassador)</h3>
+          <p>تمثيل علامتك التجاريّة على المدى الطويل عبر سلسلة محتويات حصريّة وحضور في الفعاليّات الرسميّة.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>عقد سنوي / نصف سنوي</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>حصريّة في الفئة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>حقوق استخدام موسّعة</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">03</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>حضور الفعاليّات</h3>
+          <p>المشاركة في إطلاقات المنتجات، المؤتمرات، الحملات الترويجيّة، والمعارض في المملكة والخليج.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تغطية مباشرة على القصص</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>محتوى لاحق على القناة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تفاعل حي مع الجمهور</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">04</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>تجارب المنتجات (Product Review)</h3>
+          <p>تجربة حقيقيّة وصادقة لمنتجك، مع تقديم رأيي بصدق للجمهور. حصريّة في حال طلب الحصريّة.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تجربة حقيقيّة وموضوعيّة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>فيديو مفصّل وحصص متعدّدة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>إفصاح كامل وفق الأنظمة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= حالات دراسيّة ============= -->
+  <section class="cases-section" id="cases">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">حالات دراسيّة</div>
+        <h2 class="section-title reveal">نتائج تتحدّث عن نفسها</h2>
+        <p class="section-subtitle reveal" style="margin:0 auto">أبرز التعاونات السابقة بأرقام موثّقة. (سيتم تحديث المعلومات بالنماذج الفعليّة فور الاتفاق مع الشركاء)</p>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-card reveal">
+          <div class="case-tag">محتوى مموّل</div>
+          <div class="case-logo-placeholder">شعار الشريك</div>
+          <h3>حملة إطلاق منتج</h3>
+          <p class="case-desc">تعاون استراتيجي مع علامة تجاريّة لإطلاق منتج جديد عبر فلوق متكامل.</p>
+          <div class="case-result">
+            <span class="case-result-num">+4.2M</span>
+            <div class="case-result-lbl">مشاهدة في الأسبوع الأول</div>
+          </div>
+        </div>
+
+        <div class="case-card reveal">
+          <div class="case-tag">سفير رسمي</div>
+          <div class="case-logo-placeholder">شعار الشريك</div>
+          <h3>برنامج سفير سنوي</h3>
+          <p class="case-desc">برنامج سفير سنوي مع علامة تجاريّة بارزة في القطاع الخدمي.</p>
+          <div class="case-result">
+            <span class="case-result-num">12</span>
+            <div class="case-result-lbl">فلوق مموّل خلال السنة</div>
+          </div>
+        </div>
+
+        <div class="case-card reveal">
+          <div class="case-tag">حضور فعاليّة</div>
+          <div class="case-logo-placeholder">شعار الشريك</div>
+          <h3>تغطية حدث رسمي</h3>
+          <p class="case-desc">تغطية حصريّة لإطلاق فعاليّة كبرى مع نشر متزامن على جميع المنصّات.</p>
+          <div class="case-result">
+            <span class="case-result-num">+8.5%</span>
+            <div class="case-result-lbl">معدّل التفاعل خلال الحدث</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= Media Kit ============= -->
+  <section class="mediakit-section" id="media-kit">
+    <div class="container">
+      <div class="mediakit-card reveal">
+        <div class="mediakit-content">
+          <div class="eyebrow">MEDIA KIT</div>
+          <h2>كلّ التفاصيل التي يحتاجها فريقك التسويقي</h2>
+          <p>ملف PDF احترافي يحتوي على البيانات الكاملة لاتّخاذ قرار التعاون بسرعة وثقة. أرسله مباشرة لمديرك أو فريقك.</p>
+          
+          <ul class="mediakit-includes">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>نبذة تعريفيّة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>بيانات الجمهور</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>أنواع التعاون</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>أبرز التعاونات</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>الإحصائيّات الشهريّة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>معلومات التواصل</li>
+          </ul>
+
+          <a href="#" onclick="event.preventDefault();alert('سيتم إضافة ملف Media Kit الرسمي قريباً. للاستفسارات: thunayyan16@gmail.com');" class="mediakit-btn">
+            حمّل Media Kit (PDF)
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="mediakit-visual">
+          <div class="mediakit-preview">
+            <div class="preview-header">
+              <div class="pname">ثنيان خالد</div>
+              <div class="pkit">MEDIA KIT 2026</div>
+            </div>
+            <div class="preview-stats">
+              <div class="preview-stat">
+                <span class="pn">3.5M+</span>
+                <div class="pl">YouTube</div>
+              </div>
+              <div class="preview-stat">
+                <span class="pn">2.3M</span>
+                <div class="pl">Snapchat</div>
+              </div>
+              <div class="preview-stat">
+                <span class="pn">2M</span>
+                <div class="pl">Instagram</div>
+              </div>
+              <div class="preview-stat">
+                <span class="pn">1.4M</span>
+                <div class="pl">X / Twitter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= شعارات الشركاء ============= -->
+  <section class="partners-section" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">شركاء النجاح</div>
+        <h2 class="section-title reveal">العلامات التي تعاونّا معها</h2>
+        <p class="section-subtitle reveal" style="margin:0 auto">مساحة جاهزة لاستقبال شعارات الشركاء الفعليّة.</p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+        <div class="partner reveal"><div class="partner-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="partner-name">شعار قادم</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CTA النهائي ============= -->
+  <section class="brands-cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="eyebrow">جاهز للبدء؟</div>
+        <h2>تواصل معنا لمناقشة حملتك</h2>
+        <p>سواء كنتَ تخطّط لحملة إطلاق، برنامج سفير، أو حضور فعاليّة، نسعد بدراسة طلبك وتقديم اقتراح مفصّل خلال <span class="num">48</span> ساعة عمل.</p>
+        <div class="cta-box-actions">
+          <a href="contact.html#quote" class="btn btn-light">
+            اطلب عرض سعر
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=966566334500&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0%20%D8%AB%D9%86%D9%8A%D8%A7%D9%86%D8%8C%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D9%81%D8%B1%D8%B5%D8%A9%20%D8%AA%D8%B9%D8%A7%D9%88%D9%86%20%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A." target="_blank" rel="noopener" class="btn btn-outline">
+            تواصل عبر واتساب
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
