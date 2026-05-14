@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /downloads/
+
+# Sitemap location
+Sitemap: https://saealsh.github.io/toun/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
