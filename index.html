@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ثنيان خالد | Thunayyan Khalid</title>
+<meta name="description" content="ثنيان خالد - صانع محتوى ومؤثر رقمي سعودي، أكثر من 3.5 مليون مشترك على يوتيوب وأكثر من 550 فلوق منذ عام 2010">
+<link rel="icon" type="image/jpeg" href="thunayyan.jpg">
+<link rel="apple-touch-icon" href="thunayyan.jpg">
+<link rel="stylesheet" href="styles.css">
+<style>
+.hero{
+  padding:5rem 0 4rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:4rem;
+  align-items:center;
+}
+
+.hero-text .status{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.4rem .9rem;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:.82rem;
+  color:var(--text-soft);
+  margin-bottom:1.8rem;
+  font-weight:500;
+  animation:fadeInUp .6s ease both;
+}
+.hero-text .status .dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--success);
+  position:relative;
+}
+.hero-text .status .dot::after{
+  content:'';
+  position:absolute;
+  inset:-3px;
+  border-radius:50%;
+  background:var(--success);
+  opacity:.3;
+  animation:ping 2s ease-in-out infinite;
+}
+@keyframes ping{
+  0%{transform:scale(.8);opacity:.6}
+  100%{transform:scale(1.8);opacity:0}
+}
+
+.hero-text h1{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:clamp(2.2rem,4.5vw,3.6rem);
+  line-height:1.2;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:1.3rem;
+  letter-spacing:-.5px;
+  animation:fadeInUp .7s ease .1s both;
+}
+.hero-text h1 .italic{
+  font-weight:400;
+  color:var(--text-soft);
+  display:inline-block;
+  margin-top:.3rem;
+}
+.hero-text .bio{
+  font-size:1.05rem;
+  color:var(--text-soft);
+  margin-bottom:2.5rem;
+  max-width:540px;
+  line-height:1.9;
+  animation:fadeInUp .7s ease .2s both;
+}
+.hero-cta{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+  margin-bottom:3rem;
+  animation:fadeInUp .7s ease .3s both;
+}
+.quick-stats{
+  display:flex;
+  gap:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+  animation:fadeInUp .7s ease .4s both;
+}
+.quick-stat .num{
+  font-family:'Inter',sans-serif;
+  font-size:2rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+  letter-spacing:-1px;
+  direction:ltr;
+  display:inline-block;
+}
+.quick-stat .lbl{
+  font-size:.82rem;
+  color:var(--text-muted);
+  margin-top:.4rem;
+}
+
+/* Hero Visual */
+.hero-visual{
+  position:relative;
+  height:520px;
+  animation:scaleIn .9s ease .2s both;
+}
+.profile-frame{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:340px;
+  height:440px;
+  border-radius:14px;
+  background:var(--bg-soft);
+  box-shadow:var(--shadow-lg);
+  z-index:2;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.profile-frame::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 65%,rgba(0,0,0,.15));
+  z-index:2;
+  pointer-events:none;
+}
+.profile-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  z-index:1;
+}
+
+.floating-badge{
+  position:absolute;
+  padding:.85rem 1.1rem;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  z-index:3;
+  animation:fadeInUp .8s ease .6s both;
+}
+.floating-badge.b1{top:5%;right:-2%}
+.floating-badge.b2{bottom:8%;left:-2%;animation-delay:.8s}
+.badge-icon{
+  width:34px;height:34px;
+  border-radius:7px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-size:.95rem;
+}
+.badge-text .t1{font-size:.7rem;color:var(--text-muted);margin-bottom:.1rem}
+.badge-text .t2{font-weight:700;font-size:.88rem;color:var(--text)}
+
+/* الإحصائيات */
+.stats-section{
+  background:var(--bg-soft);
+  padding:5rem 0;
+  border-block:1px solid var(--border);
+}
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:2.5rem;
+}
+.stat-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.8rem 1.5rem;
+  text-align:center;
+  transition:all .25s ease;
+}
+.stat-card:hover{
+  border-color:var(--text-muted);
+  transform:translateY(-2px);
+}
+.stat-card .icon{
+  width:48px;height:48px;
+  margin:0 auto 1rem;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+.stat-card .icon svg{width:22px;height:22px}
+.stat-card .icon.yt{background:#FF0000}
+.stat-card .icon.snap{background:#FFFC00;color:#000}
+.stat-card .icon.ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+.stat-card .icon.x{background:#000}
+[data-theme="dark"] .stat-card .icon.x{background:#1a1a1a;border:1px solid #333}
+.stat-card .big{
+  font-family:'Inter',sans-serif;
+  font-size:2rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+  margin-bottom:.3rem;
+  letter-spacing:-1px;
+  direction:ltr;
+  display:inline-block;
+}
+.stat-card .label{
+  color:var(--text-soft);
+  font-size:.88rem;
+}
+
+/* بطاقات التنقل */
+.section{padding:5rem 0}
+.section-header{
+  text-align:center;
+  max-width:640px;
+  margin:0 auto 3rem;
+}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+.nav-card{
+  display:block;
+  padding:1.8rem;
+  border-radius:12px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  text-decoration:none;
+  color:inherit;
+  transition:all .25s ease;
+  position:relative;
+}
+.nav-card:hover{
+  border-color:var(--text-muted);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+}
+.nav-card .arrow{
+  position:absolute;
+  top:1.4rem;
+  left:1.4rem;
+  width:32px;height:32px;
+  border-radius:8px;
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-soft);
+  transition:all .2s;
+  border:1px solid var(--border);
+}
+.nav-card .arrow svg{width:14px;height:14px}
+.nav-card:hover .arrow{
+  background:var(--accent);
+  color:var(--bg);
+  border-color:var(--accent);
+}
+.nav-card h3{
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.4rem;
+  margin-top:1rem;
+}
+.nav-card p{
+  color:var(--text-soft);
+  font-size:.9rem;
+  line-height:1.7;
+}
+.nav-card .card-icon{
+  width:44px;height:44px;
+  border-radius:10px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+}
+.nav-card .card-icon svg{width:20px;height:20px}
+
+@media (max-width:1024px){
+  .hero{padding:3rem 0}
+  .hero-grid{grid-template-columns:1fr;gap:3rem}
+  .hero-visual{height:480px;order:-1}
+  .profile-frame{width:300px;height:380px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .nav-cards{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .hero{padding:2rem 0}
+  .hero-visual{height:420px}
+  .profile-frame{width:260px;height:330px}
+  .quick-stats{gap:1.5rem;flex-wrap:wrap}
+  .quick-stat .num{font-size:1.6rem}
+  .nav-cards{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr;gap:.7rem}
+  .stat-card{padding:1.4rem 1rem}
+  .stat-card .big{font-size:1.7rem}
+  .floating-badge{padding:.7rem .9rem}
+  .badge-text .t2{font-size:.8rem}
+  .floating-badge.b1{right:-1%}
+  .floating-badge.b2{left:-1%}
+}
+@media (max-width:400px){
+  .hero-visual{height:380px}
+  .profile-frame{width:230px;height:290px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"><img src="thunayyan.jpg" alt="ث"></span>
+    <span>ثنيان خالد</span>
+  </a>
+  <div class="nav-wrapper">
+    <nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="about.html">عنّي</a></li>
+        <li><a href="achievements.html">إنجازاتي</a></li>
+        <li><a href="social.html">حساباتي</a></li>
+        <li><a href="partners.html">شركائي</a></li>
+        <li><a href="calendar.html">الكالندر</a></li>
+        <li><a href="contact.html">تواصل معي</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" aria-label="تبديل الوضع">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="menu-toggle" aria-label="القائمة">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="status">
+            <span class="dot"></span>
+            <span>متاح للتعاونات التجارية</span>
+          </div>
+          <h1>ثنيان خالد<br><span class="italic">صانع يوميات</span></h1>
+          <p class="bio">صانع محتوى سعودي يوثّق اليوميات منذ عام <span class="num">2010</span>. أؤمن بأن أصدق القصص هي تلك التي تُروى ببساطة، وأن المتابع الحقيقي شريك في الرحلة لا مجرد رقم. حاصل على جائزة الإعلام الجديد وجائزة أفضل فلوقر.</p>
+          
+          <div class="hero-cta">
+            <a href="contact.html" class="btn btn-primary">
+              للتعاون التجاري
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            </a>
+            <a href="achievements.html" class="btn btn-ghost">اكتشف إنجازاتي</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="quick-stat">
+              <div class="num">3.5M+</div>
+              <div class="lbl">مشترك يوتيوب</div>
+            </div>
+            <div class="quick-stat">
+              <div class="num">750M+</div>
+              <div class="lbl">مشاهدة</div>
+            </div>
+            <div class="quick-stat">
+              <div class="num">550+</div>
+              <div class="lbl">فلوق</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <img src="thunayyan.jpg" alt="ثنيان خالد" class="profile-img">
+          </div>
+
+          <div class="floating-badge b1">
+            <div class="badge-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="badge-text">
+              <div class="t1">الجائزة</div>
+              <div class="t2">أفضل فلوقر</div>
+            </div>
+          </div>
+          
+          <div class="floating-badge b2">
+            <div class="badge-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12a11 11 0 11-22 0 11 11 0 0122 0zm-12.5-5l8 5-8 5V7z"/></svg>
+            </div>
+            <div class="badge-text">
+              <div class="t1">يوتيوب</div>
+              <div class="t2"><span class="num">3.5M+</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">حضور رقمي</div>
+        <h2 class="section-title reveal">أكثر من <span class="num">10</span> ملايين متابع<br>عبر المنصات الرقمية</h2>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card reveal">
+          <div class="icon yt">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div class="big">3.5M+</div>
+          <div class="label">يوتيوب</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="icon snap">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.166 2c4.038 0 5.962 2.954 6.013 6.273.012.91 0 1.81-.077 2.692.078.046.252.103.575.103.337-.012.736-.103 1.171-.32.122-.06.272-.106.435-.106.21 0 .42.043.575.106.42.156.658.45.658.79.012.41-.353.789-1.092 1.083-.139.057-.32.117-.512.18-.633.207-1.594.519-1.85 1.122-.135.32-.082.731.156 1.225v.012c.078.18 2.014 4.434 6.18 5.118.319.052.55.343.532.665a.872.872 0 01-.046.227c-.27.633-1.402 1.097-3.466 1.42-.066.094-.135.45-.18.661-.045.21-.09.428-.156.66a.582.582 0 01-.607.426h-.024c-.135 0-.33-.024-.575-.075-.378-.075-.84-.15-1.42-.15-.34 0-.687.024-1.039.085-.681.117-1.27.532-1.949 1.018-.972.687-2.073 1.466-3.726 1.466l-.156-.005c-.045.005-.105.005-.165.005-1.654 0-2.755-.779-3.726-1.466-.681-.486-1.268-.901-1.95-1.018a6.115 6.115 0 00-1.039-.084c-.61 0-1.091.094-1.42.16-.234.046-.435.082-.575.082a.582.582 0 01-.622-.434c-.06-.221-.105-.45-.15-.66-.045-.211-.117-.563-.18-.657-2.064-.323-3.196-.787-3.466-1.42a.866.866 0 01-.046-.227.642.642 0 01.532-.665c4.166-.684 6.102-4.938 6.18-5.118v-.012c.238-.494.29-.906.156-1.225-.256-.603-1.217-.915-1.85-1.122a16.32 16.32 0 01-.512-.18c-.989-.39-1.137-.866-1.087-1.194.082-.45.706-.78 1.22-.78.151 0 .272.024.39.082.45.21.85.32 1.181.32.354 0 .55-.082.62-.121-.077-.882-.09-1.782-.077-2.692C6.204 4.954 8.128 2 12.166 2z"/></svg>
+          </div>
+          <div class="big">2.3M</div>
+          <div class="label">سناب شات</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="icon ig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="big">2M</div>
+          <div class="label">انستقرام</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="icon x">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div class="big">1.4M</div>
+          <div class="label">إكس / تويتر</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">استكشف</div>
+        <h2 class="section-title reveal">تعرّف أكثر</h2>
+        <p class="section-subtitle reveal" style="margin:0 auto">تنقّل بين أقسام الموقع لتطّلع على القصة كاملة</p>
+      </div>
+
+      <!-- بانر الكالندر -->
+      <a href="calendar.html" class="gift-banner reveal" style="
+        display:flex;
+        align-items:center;
+        gap:2rem;
+        padding:2rem;
+        background:var(--accent);
+        color:var(--bg);
+        border-radius:14px;
+        margin-bottom:3rem;
+        text-decoration:none;
+        transition:all .3s ease;
+        position:relative;
+        overflow:hidden;
+      ">
+        <div style="
+          width:90px;
+          height:110px;
+          background:var(--bg);
+          color:var(--text);
+          border-radius:10px;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          flex-shrink:0;
+          box-shadow:0 8px 20px rgba(0,0,0,.2);
+        ">
+          <div style="font-size:.7rem;color:var(--text-muted);letter-spacing:1.5px;font-family:'Inter',sans-serif;font-weight:700">CALENDAR</div>
+          <div style="font-family:'Inter',sans-serif;font-size:2.2rem;font-weight:700;color:var(--text);letter-spacing:-1.5px;line-height:1">2026</div>
+          <div style="width:30px;height:2px;background:var(--text);margin-top:.4rem"></div>
+        </div>
+        
+        <div style="flex:1">
+          <div style="display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .7rem;background:rgba(255,255,255,.15);border-radius:6px;font-size:.72rem;font-weight:600;margin-bottom:.7rem">
+            <span style="width:6px;height:6px;border-radius:50%;background:#10b981"></span>
+            هدية جديدة · مجانية
+          </div>
+          <h3 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:.4rem;line-height:1.3">كالندر <span class="num">2026</span> · هديتي لكم</h3>
+          <p style="font-size:.95rem;opacity:.85;line-height:1.7;margin:0">كالندر سنوي احترافي لتنظيم أهدافك ومهامك طوال السنة. متوفر بصيغ Excel و PDF و Google Sheets.</p>
+        </div>
+        
+        <div style="
+          padding:.8rem 1.4rem;
+          background:var(--bg);
+          color:var(--text);
+          border-radius:10px;
+          font-weight:700;
+          font-size:.92rem;
+          display:flex;
+          align-items:center;
+          gap:.5rem;
+          flex-shrink:0;
+        ">
+          حمّل الآن
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        </div>
+      </a>
+      
+      <style>
+        .gift-banner:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+        @media (max-width:768px){
+          .gift-banner{flex-direction:column;text-align:center;padding:1.8rem 1.5rem!important}
+          .gift-banner > div:last-child{width:100%;justify-content:center}
+        }
+      </style>
+      
+      <div class="nav-cards">
+        <a href="about.html" class="nav-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.66c1.4-1.6 3.2-2.66 5-2.66s3.6 1.06 5 2.66"/></svg>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg></span>
+          <h3>عنّي</h3>
+          <p>قصتي مع الكاميرا، البدايات، والمحطات التي شكّلت مسيرتي.</p>
+        </a>
+        <a href="achievements.html" class="nav-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13l1.5 9-5-3-5 3 1.5-9"/></svg>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg></span>
+          <h3>إنجازاتي</h3>
+          <p>أرقام وجوائز ومحطات بارزة على مدار أكثر من <span class="num">15</span> عاماً.</p>
+        </a>
+        <a href="social.html" class="nav-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg></span>
+          <h3>حساباتي</h3>
+          <p>روابط حساباتي على جميع المنصات مع الأرقام الحقيقية المحدّثة.</p>
+        </a>
+        <a href="partners.html" class="nav-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg></span>
+          <h3>شركائي</h3>
+          <p>أبرز العلامات التجارية التي تعاونت معها على مدار رحلتي.</p>
+        </a>
+        <a href="contact.html" class="nav-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg></span>
+          <h3>تواصل معي</h3>
+          <p>للتعاونات التجارية، الرعايات، والاستفسارات - أنا في انتظارك.</p>
+        </a>
+        <a href="https://toun16.com" target="_blank" rel="noopener" class="nav-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+          <h3>المتجر الرسمي</h3>
+          <p>زر موقع toun16.com لمشاهدة أحدث المنتجات والإصدارات.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">ثنيان خالد</div>
+    <div class="footer-quote">"Still The Best."</div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/channel/UCtAUHu0stm1w5Sw_m1CaIKw" target="_blank" rel="noopener" class="social-icon-frame" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/thunayyan16" target="_blank" rel="noopener" class="social-icon-frame" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@tounk16" target="_blank" rel="noopener" class="social-icon-frame" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
+      </a>
+      <a href="https://x.com/Thunayyan16" target="_blank" rel="noopener" class="social-icon-frame" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.snapchat.com/@toun16" target="_blank" rel="noopener" class="social-icon-frame" aria-label="Snapchat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.166 2c4.038 0 5.962 2.954 6.013 6.273.012.91 0 1.81-.077 2.692.078.046.252.103.575.103.337-.012.736-.103 1.171-.32.122-.06.272-.106.435-.106.21 0 .42.043.575.106.42.156.658.45.658.79.012.41-.353.789-1.092 1.083-.139.057-.32.117-.512.18-.633.207-1.594.519-1.85 1.122-.135.32-.082.731.156 1.225v.012c.078.18 2.014 4.434 6.18 5.118.319.052.55.343.532.665a.872.872 0 01-.046.227c-.27.633-1.402 1.097-3.466 1.42-.066.094-.135.45-.18.661-.045.21-.09.428-.156.66a.582.582 0 01-.607.426h-.024c-.135 0-.33-.024-.575-.075-.378-.075-.84-.15-1.42-.15-.34 0-.687.024-1.039.085-.681.117-1.27.532-1.949 1.018-.972.687-2.073 1.466-3.726 1.466l-.156-.005c-.045.005-.105.005-.165.005-1.654 0-2.755-.779-3.726-1.466-.681-.486-1.268-.901-1.95-1.018a6.115 6.115 0 00-1.039-.084c-.61 0-1.091.094-1.42.16-.234.046-.435.082-.575.082a.582.582 0 01-.622-.434c-.06-.221-.105-.45-.15-.66-.045-.211-.117-.563-.18-.657-2.064-.323-3.196-.787-3.466-1.42a.866.866 0 01-.046-.227.642.642 0 01.532-.665c4.166-.684 6.102-4.938 6.18-5.118v-.012c.238-.494.29-.906.156-1.225-.256-.603-1.217-.915-1.85-1.122a16.32 16.32 0 01-.512-.18c-.989-.39-1.137-.866-1.087-1.194.082-.45.706-.78 1.22-.78.151 0 .272.024.39.082.45.21.85.32 1.181.32.354 0 .55-.082.62-.121-.077-.882-.09-1.782-.077-2.692C6.204 4.954 8.128 2 12.166 2z"/></svg>
+      </a>
+      <a href="https://kick.com/thunayyan16" target="_blank" rel="noopener" class="social-icon-frame" aria-label="Kick">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.714 1.714h6.857v6.857h3.429V1.714h6.857v6.857h-3.429v6.858h3.429v6.857h-6.857v-6.857H8.571v6.857H1.714V1.714z"/></svg>
+      </a>
+      <a href="https://discord.com/invite/25SVM4dC" target="_blank" rel="noopener" class="social-icon-frame" aria-label="Discord">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+      </a>
+    </div>
+    <div class="footer-copy">© <span class="num">2026</span> ثنيان خالد · المملكة العربية السعودية · جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
