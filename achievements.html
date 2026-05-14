@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إنجازاتي | ثنيان خالد</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.big-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-bottom:5rem;
+}
+.big-stat{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:2rem 1.5rem;
+  text-align:center;
+  transition:border-color .2s;
+}
+.big-stat:hover{
+  border-color:var(--text-muted);
+}
+.big-stat .label-top{
+  font-size:.72rem;
+  letter-spacing:1.5px;
+  font-weight:700;
+  color:var(--text-muted);
+  margin-bottom:1.2rem;
+}
+.big-stat .num{
+  font-family:'Thmanyah Display',serif;
+  font-size:2.8rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+  margin-bottom:.4rem;
+  letter-spacing:-1.5px;
+}
+.big-stat .desc{
+  color:var(--text-soft);
+  font-size:.88rem;
+}
+
+/* الجوائز */
+.awards{margin-bottom:5rem}
+.awards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  margin-top:2rem;
+}
+.award{
+  display:flex;
+  gap:1.3rem;
+  padding:1.8rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  transition:border-color .2s;
+}
+.award:hover{
+  border-color:var(--text-muted);
+}
+.award-medal{
+  width:48px;height:48px;
+  flex-shrink:0;
+  border-radius:8px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-size:1.2rem;
+  font-weight:700;
+}
+.award h4{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.3rem;
+}
+.award .year{
+  color:var(--text-muted);
+  font-size:.82rem;
+  font-weight:700;
+  margin-bottom:.5rem;
+}
+.award p{color:var(--text-soft);font-size:.92rem;line-height:1.6}
+
+/* الخط الزمني */
+.timeline-wrap{
+  position:relative;
+  padding-right:2.5rem;
+  margin-top:2rem;
+}
+.timeline-wrap::before{
+  content:'';
+  position:absolute;
+  top:.5rem;
+  bottom:.5rem;
+  right:.6rem;
+  width:1px;
+  background:var(--border);
+}
+.tl-item{
+  position:relative;
+  padding-bottom:2.5rem;
+}
+.tl-item::before{
+  content:'';
+  position:absolute;
+  top:.4rem;
+  right:-2.1rem;
+  width:13px;height:13px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid var(--text);
+}
+.tl-item .year{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.3rem;
+}
+.tl-item h4{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.4rem;
+}
+.tl-item p{
+  color:var(--text-soft);
+  font-size:.92rem;
+  line-height:1.7;
+}
+
+@media (max-width:1024px){
+  .big-stats{grid-template-columns:repeat(2,1fr)}
+  .awards-grid{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .big-stats{grid-template-columns:1fr 1fr;gap:1rem}
+  .big-stat{padding:1.8rem 1.2rem}
+  .big-stat .num{font-size:2.5rem}
+  .award{flex-direction:column;gap:1rem;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"><img src="thunayyan.jpg" alt="ث"></span>
+    <span>ثنيان خالد</span>
+  </a>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="about.html">عنّي</a></li>
+      <li><a href="achievements.html" class="active">إنجازاتي</a></li>
+      <li><a href="social.html">حساباتي</a></li>
+      <li><a href="partners.html">شركائي</a></li>
+      <li><a href="contact.html">تواصل معي</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" aria-label="القائمة">☰</button>
+</header>
+
+<main>
+  <div class="container">
+    <section class="page-hero">
+      <div class="breadcrumb">★ إنجازاتي</div>
+      <h1>أرقام تتحدث عن <span class="accent">الرحلة</span></h1>
+      <p class="lead">أكثر من ١٥ سنة من العمل المستمر، تترجمت إلى مجتمع رقمي ضخم وإنجازات أعتزّ بها.</p>
+    </section>
+
+    <section>
+      <div class="big-stats">
+        <div class="big-stat reveal">
+          <div class="label-top">YOUTUBE</div>
+          <div class="num">٣.٥M+</div>
+          <div class="desc">مشترك على القناة</div>
+        </div>
+        <div class="big-stat reveal">
+          <div class="label-top">VIEWS</div>
+          <div class="num">٩٤٣M+</div>
+          <div class="desc">إجمالي المشاهدات</div>
+        </div>
+        <div class="big-stat reveal">
+          <div class="label-top">VLOGS</div>
+          <div class="num">٥٥٠+</div>
+          <div class="desc">فلوق منشور</div>
+        </div>
+        <div class="big-stat reveal">
+          <div class="label-top">YEARS</div>
+          <div class="num">١٥+</div>
+          <div class="desc">سنة من العطاء</div>
+        </div>
+      </div>
+
+      <div class="awards">
+        <div class="eyebrow reveal">الجوائز والتكريمات</div>
+        <h2 class="section-title reveal">محطات مضيئة</h2>
+        <div class="awards-grid">
+          <div class="award reveal">
+            <div class="award-medal">★</div>
+            <div>
+              <div class="year">٢٠١٧</div>
+              <h4>جائزة الإعلام الجديد</h4>
+              <p>تكريم على الإسهام في صناعة المحتوى الرقمي العربي وريادة المجال.</p>
+            </div>
+          </div>
+          <div class="award reveal">
+            <div class="award-medal">◆</div>
+            <div>
+              <div class="year">متعدّدة</div>
+              <h4>جائزة أفضل فلوقر</h4>
+              <p>تكريمات متعددة على جودة المحتوى والاستمرارية في تقديم الفلوقات.</p>
+            </div>
+          </div>
+          <div class="award reveal">
+            <div class="award-medal">◇</div>
+            <div>
+              <div class="year">٢٠٢٢</div>
+              <h4>درع يوتيوب الذهبي</h4>
+              <p>عند تخطّي حاجز المليون مشترك على القناة الرئيسية.</p>
+            </div>
+          </div>
+          <div class="award reveal">
+            <div class="award-medal">◈</div>
+            <div>
+              <div class="year">٢٠٢٤</div>
+              <h4>إصدار كتاب</h4>
+              <p>"كل اللي شفتوا في الفلوقات لخصناه في الكتاب" - حضور في معرض الكتاب.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow reveal">الخط الزمني</div>
+        <h2 class="section-title reveal">رحلتي في محطات</h2>
+        
+        <div class="timeline-wrap">
+          <div class="tl-item reveal">
+            <div class="year">٢٠١٠</div>
+            <h4>البداية</h4>
+            <p>إنشاء قناة يوتيوب وبدء نشر الفلوقات الأولى من السعودية.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="year">٢٠١٤</div>
+            <h4>الانطلاقة الكبرى</h4>
+            <p>توسّع القناة وبداية الظهور الواسع في المشهد الإعلامي العربي.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="year">٢٠١٧</div>
+            <h4>جائزة الإعلام الجديد</h4>
+            <p>أول جائزة كبرى تكريماً للحضور المتميز في الإعلام الرقمي.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="year">٢٠٢٢</div>
+            <h4>المليون الأول</h4>
+            <p>تخطّي حاجز مليون مشترك والحصول على درع يوتيوب الذهبي.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="year">٢٠٢٤</div>
+            <h4>إصدار الكتاب</h4>
+            <p>توثيق التجربة في كتاب ومشاركته مع الجمهور في معرض الكتاب.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="year">٢٠٢٦</div>
+            <h4>٣.٥ مليون مشترك</h4>
+            <p>الوصول إلى ٣.٥ مليون مشترك وأكثر من ٥٥٠ فلوق منشور.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">ثنيان خالد</div>
+    <div class="footer-quote">"Still The Best."</div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/channel/UCtAUHu0stm1w5Sw_m1CaIKw" target="_blank">▶</a>
+      <a href="https://www.instagram.com/thunayyan16" target="_blank">📷</a>
+      <a href="https://www.tiktok.com/@tounk16" target="_blank">♪</a>
+      <a href="https://x.com/Thunayyan16" target="_blank">𝕏</a>
+      <a href="https://www.snapchat.com/@toun16" target="_blank">👻</a>
+      <a href="https://kick.com/thunayyan16" target="_blank">⚡</a>
+      <a href="https://discord.com/invite/25SVM4dC" target="_blank">💬</a>
+    </div>
+    <div class="footer-copy">© ٢٠٢٦ ثنيان خالد · جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

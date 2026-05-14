@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ثنيان خالد | Thunayyan Khalid</title>
+<meta name="description" content="ثنيان خالد - مهتم بتوثيق اليوميات، ٣ مليون مشترك على اليوتيوب وأكثر من ٥٥٠ فلوق، وفائز بجائزة أفضل فلوقر">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ===== Hero خاص بالصفحة الرئيسية ===== */
+.hero{
+  padding:6rem 0 5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:5rem;
+  align-items:center;
+}
+.hero-text .greeting{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.4rem .9rem;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:6px;
+  font-size:.82rem;
+  color:var(--text-soft);
+  margin-bottom:1.8rem;
+  font-weight:500;
+}
+.hero-text .greeting .dot{
+  width:7px;height:7px;
+  border-radius:50%;
+  background:#22c55e;
+}
+.hero-text h1{
+  font-family:'Thmanyah Display',serif;
+  font-size:clamp(2.4rem,5vw,4.2rem);
+  line-height:1.1;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:1.3rem;
+  letter-spacing:-.8px;
+}
+.hero-text h1 .italic{
+  font-style:italic;
+  color:var(--text);
+  font-weight:500;
+}
+.hero-text .bio{
+  font-size:1.05rem;
+  color:var(--text-soft);
+  margin-bottom:2.5rem;
+  max-width:520px;
+  line-height:1.8;
+}
+.hero-cta{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+  margin-bottom:3rem;
+}
+.quick-stats{
+  display:flex;
+  gap:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.quick-stat .num{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.9rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+}
+.quick-stat .lbl{
+  font-size:.82rem;
+  color:var(--text-muted);
+  margin-top:.4rem;
+}
+
+/* ===== Hero Visual ===== */
+.hero-visual{
+  position:relative;
+  height:520px;
+}
+.profile-frame{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:340px;
+  height:440px;
+  border-radius:14px;
+  background:var(--bg-soft);
+  box-shadow:var(--shadow-lg);
+  z-index:2;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.profile-frame::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(14,16,21,.10));
+  z-index:2;
+  pointer-events:none;
+}
+.profile-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  z-index:1;
+}
+.profile-bg-shape{display:none}
+.floating-badge{
+  position:absolute;
+  padding:.85rem 1.2rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  z-index:3;
+}
+.floating-badge.b1{top:5%;right:-3%}
+.floating-badge.b2{bottom:8%;left:-3%}
+.floating-badge.b3{display:none}
+.badge-icon{
+  width:36px;height:36px;
+  border-radius:8px;
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-weight:700;
+  font-size:1rem;
+}
+.badge-text .t1{font-size:.7rem;color:var(--text-muted)}
+.badge-text .t2{font-weight:700;font-size:.9rem;color:var(--text)}
+
+/* إزالة الدوائر الزخرفية */
+.deco-circle{display:none}
+
+/* ===== أقسام الصفحة ===== */
+.section{padding:5rem 0}
+
+/* ===== الإحصائيات الكبيرة ===== */
+.stats-section{
+  background:var(--bg-soft);
+  padding:5rem 0;
+  border-block:1px solid var(--border);
+}
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:2.5rem;
+}
+.stat-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.8rem 1.5rem;
+  text-align:center;
+  transition:border-color .2s ease;
+}
+.stat-card:hover{
+  border-color:var(--text-muted);
+}
+.stat-card .icon{
+  width:42px;height:42px;
+  margin:0 auto 1rem;
+  border-radius:8px;
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-size:1.1rem;
+  font-weight:700;
+  border:1px solid var(--border);
+}
+.stat-card .big{
+  font-family:'Thmanyah Display',serif;
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+  margin-bottom:.3rem;
+}
+.stat-card .label{
+  color:var(--text-soft);
+  font-size:.9rem;
+}
+
+/* ===== التنقل بين الأقسام (بطاقات روابط) ===== */
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+.nav-card{
+  display:block;
+  padding:1.8rem;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid var(--border);
+  text-decoration:none;
+  color:inherit;
+  transition:border-color .2s ease, transform .2s ease;
+  position:relative;
+}
+.nav-card:hover{
+  border-color:var(--text-muted);
+  transform:translateY(-2px);
+}
+.nav-card .arrow{
+  position:absolute;
+  top:1.4rem;
+  left:1.4rem;
+  width:32px;height:32px;
+  border-radius:8px;
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-soft);
+  transition:all .2s;
+  font-size:.9rem;
+  border:1px solid var(--border);
+}
+.nav-card:hover .arrow{
+  background:var(--text);
+  color:#fff;
+  border-color:var(--text);
+}
+.nav-card h3{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.4rem;
+  margin-top:1rem;
+}
+.nav-card p{
+  color:var(--text-soft);
+  font-size:.92rem;
+  line-height:1.6;
+}
+.nav-card .card-icon{
+  width:44px;height:44px;
+  border-radius:8px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+  color:var(--text);
+}
+
+/* ===== استجابة ===== */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:3rem}
+  .hero-visual{height:480px;order:-1}
+  .profile-frame{width:300px;height:380px}
+  .profile-bg-shape{width:320px;height:400px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .nav-cards{grid-template-columns:1fr 1fr}
+}
+@media (max-width:768px){
+  .hero{padding:3rem 0}
+  .hero-visual{height:420px}
+  .profile-frame{width:260px;height:330px}
+  .profile-bg-shape{width:280px;height:350px}
+  .quick-stats{gap:1.5rem;flex-wrap:wrap}
+  .quick-stat .num{font-size:1.6rem}
+  .nav-cards{grid-template-columns:1fr}
+  .stats-row{gap:1rem}
+  .stat-card{padding:1.5rem 1rem}
+  .stat-card .big{font-size:2rem}
+  .floating-badge.b3{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"><img src="thunayyan.jpg" alt="ث"></span>
+    <span>ثنيان خالد</span>
+  </a>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">الرئيسية</a></li>
+      <li><a href="about.html">عنّي</a></li>
+      <li><a href="achievements.html">إنجازاتي</a></li>
+      <li><a href="social.html">حساباتي</a></li>
+      <li><a href="partners.html">شركائي</a></li>
+      <li><a href="contact.html">تواصل معي</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" aria-label="القائمة">☰</button>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="greeting">
+            <span class="dot"></span>
+            <span>متاح للتعاونات التجارية</span>
+          </div>
+          <h1>ثنيان <span class="italic">خالد</span><br>صانع <span class="italic">يوميات</span></h1>
+          <p class="bio">مهتم بتوثيق اليوميات منذ ٢٠١٠. أنشر فلوقات أنقل من خلالها رحلتي وتجاربي في الحياة، وفائز بجائزة أفضل فلوقر وجائزة الإعلام الجديد.</p>
+          
+          <div class="hero-cta">
+            <a href="contact.html" class="btn btn-primary">للتعاون التجاري ←</a>
+            <a href="achievements.html" class="btn btn-ghost">اكتشف إنجازاتي</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="quick-stat">
+              <div class="num" data-target="3530000">٣.٥M</div>
+              <div class="lbl">مشترك يوتيوب</div>
+            </div>
+            <div class="quick-stat">
+              <div class="num">+٥٥٠</div>
+              <div class="lbl">فلوق</div>
+            </div>
+            <div class="quick-stat">
+              <div class="num">+٩٤٣M</div>
+              <div class="lbl">مشاهدة</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c2"></div>
+          <div class="profile-bg-shape"></div>
+          
+          <div class="profile-frame">
+            <img src="thunayyan.jpg" alt="ثنيان خالد" class="profile-img">
+          </div>
+
+          <div class="floating-badge b1">
+            <div class="badge-icon">★</div>
+            <div class="badge-text">
+              <div class="t1">الجائزة</div>
+              <div class="t2">أفضل فلوقر</div>
+            </div>
+          </div>
+          
+          <div class="floating-badge b2">
+            <div class="badge-icon">▶</div>
+            <div class="badge-text">
+              <div class="t1">يوتيوب</div>
+              <div class="t2">٣.٥M+</div>
+            </div>
+          </div>
+
+          <div class="floating-badge b3">
+            <div class="badge-icon">✦</div>
+            <div class="badge-text">
+              <div class="t1">منذ</div>
+              <div class="t2">٢٠١٠</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats-section">
+    <div class="container">
+      <div style="text-align:center;max-width:600px;margin:0 auto 1rem">
+        <div class="eyebrow reveal">حضور رقمي</div>
+        <h2 class="section-title reveal">أكثر من ١٠ مليون متابع<br>عبر المنصات</h2>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card reveal">
+          <div class="icon">▶</div>
+          <div class="big">٣.٥M</div>
+          <div class="label">يوتيوب</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="icon">📷</div>
+          <div class="big">٢M</div>
+          <div class="label">انستقرام</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="icon">👻</div>
+          <div class="big">٢.٣M</div>
+          <div class="label">سناب شات</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="icon">𝕏</div>
+          <div class="big">١.٤M</div>
+          <div class="label">تويتر</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NAV CARDS ============ -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;max-width:600px;margin:0 auto">
+        <div class="eyebrow reveal">استكشف</div>
+        <h2 class="section-title reveal">تعرّف أكثر</h2>
+        <p class="section-subtitle reveal" style="margin:0 auto 3rem">تنقّل بين الأقسام لتعرف القصة كاملة</p>
+      </div>
+      
+      <div class="nav-cards">
+        <a href="about.html" class="nav-card reveal">
+          <div class="card-icon">◷</div>
+          <span class="arrow">←</span>
+          <h3>عنّي</h3>
+          <p>قصتي مع الكاميرا، البدايات، والمحطات التي صنعت ثنيان خالد الذي تعرفونه اليوم.</p>
+        </a>
+        <a href="achievements.html" class="nav-card reveal">
+          <div class="card-icon">★</div>
+          <span class="arrow">←</span>
+          <h3>إنجازاتي</h3>
+          <p>أرقام، جوائز، ومحطات بارزة على مدار أكثر من ١٥ سنة من صناعة المحتوى.</p>
+        </a>
+        <a href="social.html" class="nav-card reveal">
+          <div class="card-icon">◉</div>
+          <span class="arrow">←</span>
+          <h3>حساباتي</h3>
+          <p>روابط مباشرة لكل حساباتي مع الأرقام الحقيقية المحدّثة لكل منصة.</p>
+        </a>
+        <a href="partners.html" class="nav-card reveal">
+          <div class="card-icon">◇</div>
+          <span class="arrow">←</span>
+          <h3>شركائي</h3>
+          <p>أبرز العلامات التجارية التي تعاونت معها على مدار رحلتي الإعلامية.</p>
+        </a>
+        <a href="contact.html" class="nav-card reveal">
+          <div class="card-icon">✉</div>
+          <span class="arrow">←</span>
+          <h3>تواصل معي</h3>
+          <p>للتعاونات التجارية، الرعايات، والاستفسارات - أنا متاح للحديث.</p>
+        </a>
+        <a href="https://toun16.com" target="_blank" class="nav-card reveal">
+          <div class="card-icon">🛍</div>
+          <span class="arrow">←</span>
+          <h3>المتجر</h3>
+          <p>زر المتجر الرسمي toun16.com لمشاهدة آخر الإصدارات والمنتجات.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">ثنيان خالد</div>
+    <div class="footer-quote">"Still The Best."</div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/channel/UCtAUHu0stm1w5Sw_m1CaIKw" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/thunayyan16" target="_blank" title="Instagram">📷</a>
+      <a href="https://www.tiktok.com/@tounk16" target="_blank" title="TikTok">♪</a>
+      <a href="https://x.com/Thunayyan16" target="_blank" title="X">𝕏</a>
+      <a href="https://www.snapchat.com/@toun16" target="_blank" title="Snapchat">👻</a>
+      <a href="https://kick.com/thunayyan16" target="_blank" title="Kick">⚡</a>
+      <a href="https://discord.com/invite/25SVM4dC" target="_blank" title="Discord">💬</a>
+    </div>
+    <div class="footer-copy">© ٢٠٢٦ ثنيان خالد · جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

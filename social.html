@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حساباتي | ثنيان خالد</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+  margin-top:2rem;
+}
+.social-tile{
+  display:block;
+  padding:1.8rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  text-decoration:none;
+  color:inherit;
+  transition:border-color .2s ease, transform .2s ease;
+  position:relative;
+}
+.social-tile::after{
+  content:'↗';
+  position:absolute;
+  top:1.4rem;
+  left:1.4rem;
+  width:30px;height:30px;
+  border-radius:6px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-soft);
+  font-size:.9rem;
+  transition:all .2s;
+}
+.social-tile:hover{
+  border-color:var(--text-muted);
+  transform:translateY(-2px);
+}
+.social-tile:hover::after{
+  background:var(--text);
+  color:#fff;
+  border-color:var(--text);
+}
+.social-tile .platform-row{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  margin-bottom:1.5rem;
+}
+.platform-icon{
+  width:46px;height:46px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+  color:#fff;
+  font-weight:700;
+}
+.platform-icon.youtube{background:#ff0000}
+.platform-icon.instagram{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)}
+.platform-icon.tiktok{background:#000}
+.platform-icon.twitter{background:#000}
+.platform-icon.snapchat{background:#fffc00;color:#000}
+.platform-icon.kick{background:#53fc18;color:#000}
+.platform-icon.discord{background:#5865f2}
+.platform-icon.threads{background:#000}
+.platform-icon.website{background:var(--text)}
+.platform-name{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+}
+.platform-handle{
+  color:var(--text-muted);
+  font-size:.82rem;
+  margin-top:.2rem;
+}
+.social-tile .count{
+  font-family:'Thmanyah Display',serif;
+  font-size:2rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+  letter-spacing:-.5px;
+}
+.social-tile .count-label{
+  color:var(--text-soft);
+  font-size:.85rem;
+  margin-top:.4rem;
+}
+
+.note-banner{
+  margin-top:3rem;
+  padding:1.3rem 1.6rem;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  gap:1.2rem;
+}
+.note-banner .icon{
+  width:38px;height:38px;
+  flex-shrink:0;
+  border-radius:8px;
+  background:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1rem;
+  font-weight:700;
+}
+.note-banner .text{flex:1}
+.note-banner h4{
+  font-family:'Thmanyah Display',serif;
+  font-weight:700;
+  margin-bottom:.2rem;
+  color:var(--text);
+  font-size:1rem;
+}
+.note-banner p{color:var(--text-soft);font-size:.88rem;margin:0}
+
+@media (max-width:1024px){
+  .social-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:768px){
+  .social-grid{grid-template-columns:1fr}
+  .note-banner{flex-direction:column;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"><img src="thunayyan.jpg" alt="ث"></span>
+    <span>ثنيان خالد</span>
+  </a>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="about.html">عنّي</a></li>
+      <li><a href="achievements.html">إنجازاتي</a></li>
+      <li><a href="social.html" class="active">حساباتي</a></li>
+      <li><a href="partners.html">شركائي</a></li>
+      <li><a href="contact.html">تواصل معي</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" aria-label="القائمة">☰</button>
+</header>
+
+<main>
+  <div class="container">
+    <section class="page-hero">
+      <div class="breadcrumb">◉ حساباتي</div>
+      <h1>تابعني <span class="accent">في كل مكان</span></h1>
+      <p class="lead">حضور رقمي ممتد عبر أبرز المنصات، مع الأرقام الحقيقية لكل قناة.</p>
+    </section>
+
+    <section>
+      <div class="social-grid">
+        <a href="https://www.youtube.com/channel/UCtAUHu0stm1w5Sw_m1CaIKw" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon youtube">▶</div>
+            <div>
+              <div class="platform-name">YouTube</div>
+              <div class="platform-handle">@toun16</div>
+            </div>
+          </div>
+          <div class="count">٣.٥M+</div>
+          <div class="count-label">مشترك · ٩٤٣M+ مشاهدة</div>
+        </a>
+
+        <a href="https://www.snapchat.com/@toun16" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon snapchat">👻</div>
+            <div>
+              <div class="platform-name">Snapchat</div>
+              <div class="platform-handle">@toun16</div>
+            </div>
+          </div>
+          <div class="count">٢.٣M</div>
+          <div class="count-label">متابع</div>
+        </a>
+
+        <a href="https://www.instagram.com/thunayyan16" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon instagram">📷</div>
+            <div>
+              <div class="platform-name">Instagram</div>
+              <div class="platform-handle">@thunayyan16</div>
+            </div>
+          </div>
+          <div class="count">٢M</div>
+          <div class="count-label">متابع · ١٠٢١ منشور</div>
+        </a>
+
+        <a href="https://x.com/Thunayyan16" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon twitter">𝕏</div>
+            <div>
+              <div class="platform-name">X / Twitter</div>
+              <div class="platform-handle">@Thunayyan16</div>
+            </div>
+          </div>
+          <div class="count">١.٤M</div>
+          <div class="count-label">متابع</div>
+        </a>
+
+        <a href="https://www.tiktok.com/@tounk16" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon tiktok">♪</div>
+            <div>
+              <div class="platform-name">TikTok</div>
+              <div class="platform-handle">@tounk16</div>
+            </div>
+          </div>
+          <div class="count">٣٤٨K</div>
+          <div class="count-label">متابع · ٣.٣M إعجاب</div>
+        </a>
+
+        <a href="https://www.threads.com/@thunayyan16" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon threads">@</div>
+            <div>
+              <div class="platform-name">Threads</div>
+              <div class="platform-handle">@thunayyan16</div>
+            </div>
+          </div>
+          <div class="count">٩٢K</div>
+          <div class="count-label">متابع</div>
+        </a>
+
+        <a href="https://kick.com/thunayyan16" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon kick">⚡</div>
+            <div>
+              <div class="platform-name">Kick</div>
+              <div class="platform-handle">thunayyan16</div>
+            </div>
+          </div>
+          <div class="count">٩.٦K</div>
+          <div class="count-label">متابع · بث مباشر</div>
+        </a>
+
+        <a href="https://discord.com/invite/25SVM4dC" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon discord">💬</div>
+            <div>
+              <div class="platform-name">Discord</div>
+              <div class="platform-handle">مجتمع أصحاب ثنيان</div>
+            </div>
+          </div>
+          <div class="count">مجتمع</div>
+          <div class="count-label">انضم إلى السيرفر الرسمي</div>
+        </a>
+
+        <a href="https://toun16.com" target="_blank" class="social-tile reveal">
+          <div class="platform-row">
+            <div class="platform-icon website">🛍</div>
+            <div>
+              <div class="platform-name">المتجر</div>
+              <div class="platform-handle">toun16.com</div>
+            </div>
+          </div>
+          <div class="count">المتجر</div>
+          <div class="count-label">الموقع الرسمي للمنتجات</div>
+        </a>
+      </div>
+
+      <div class="note-banner reveal">
+        <div class="icon">i</div>
+        <div class="text">
+          <h4>الأرقام محدّثة بتاريخ مايو ٢٠٢٦</h4>
+          <p>الأرقام أعلاه تمثّل آخر بيانات متاحة من كل منصة، ومُحدَّثة بشكل دوري. اضغط على أي بطاقة للانتقال للحساب الرسمي.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">ثنيان خالد</div>
+    <div class="footer-quote">"Still The Best."</div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/channel/UCtAUHu0stm1w5Sw_m1CaIKw" target="_blank">▶</a>
+      <a href="https://www.instagram.com/thunayyan16" target="_blank">📷</a>
+      <a href="https://www.tiktok.com/@tounk16" target="_blank">♪</a>
+      <a href="https://x.com/Thunayyan16" target="_blank">𝕏</a>
+      <a href="https://www.snapchat.com/@toun16" target="_blank">👻</a>
+      <a href="https://kick.com/thunayyan16" target="_blank">⚡</a>
+      <a href="https://discord.com/invite/25SVM4dC" target="_blank">💬</a>
+    </div>
+    <div class="footer-copy">© ٢٠٢٦ ثنيان خالد · جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

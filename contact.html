@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تواصل معي | ثنيان خالد</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:3rem;
+  margin-top:2rem;
+}
+
+.contact-info-card{
+  padding:2rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  height:fit-content;
+  position:sticky;
+  top:100px;
+}
+.contact-info-card h3{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.4rem;
+  font-weight:700;
+  margin-bottom:.5rem;
+  color:var(--text);
+}
+.contact-info-card > p{
+  color:var(--text-soft);
+  margin-bottom:2rem;
+  font-size:.95rem;
+}
+
+.contact-method{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  padding:1rem 1.1rem;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:8px;
+  margin-bottom:.6rem;
+  text-decoration:none;
+  color:inherit;
+  transition:border-color .2s;
+}
+.contact-method:hover{
+  border-color:var(--text-muted);
+  background:#fff;
+}
+.method-icon{
+  width:40px;height:40px;
+  flex-shrink:0;
+  border-radius:8px;
+  background:#fff;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-size:1.05rem;
+}
+.method-info .lbl{
+  font-size:.74rem;
+  color:var(--text-muted);
+  margin-bottom:.2rem;
+}
+.method-info .val{
+  font-weight:700;
+  color:var(--text);
+  font-size:.9rem;
+}
+
+.contact-form{
+  padding:2.2rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+.contact-form h3{
+  font-family:'Thmanyah Display',serif;
+  font-size:1.35rem;
+  font-weight:700;
+  margin-bottom:.5rem;
+  color:var(--text);
+}
+.contact-form > p{
+  color:var(--text-soft);
+  margin-bottom:2rem;
+  font-size:.92rem;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+.form-group{margin-bottom:1.2rem}
+.form-group label{
+  display:block;
+  font-size:.85rem;
+  font-weight:500;
+  margin-bottom:.5rem;
+  color:var(--text-soft);
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:.85rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--text);
+  font-family:inherit;
+  font-size:.93rem;
+  transition:border-color .2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:var(--text);
+}
+.form-group textarea{resize:vertical;min-height:120px}
+
+.submit-btn{
+  width:100%;
+  padding:1rem;
+  background:var(--text);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-family:inherit;
+  font-size:.95rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .2s;
+}
+.submit-btn:hover{
+  background:var(--green-700);
+}
+
+.faq-section{margin-top:5rem}
+.faq{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:8px;
+  margin-bottom:.6rem;
+  overflow:hidden;
+  transition:border-color .2s;
+}
+.faq:hover{border-color:var(--text-muted)}
+.faq summary{
+  padding:1.1rem 1.3rem;
+  cursor:pointer;
+  font-weight:700;
+  color:var(--text);
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:.95rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:'+';
+  font-size:1.2rem;
+  color:var(--text-soft);
+  font-weight:300;
+  transition:transform .3s;
+}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .answer{
+  padding:0 1.3rem 1.1rem;
+  color:var(--text-soft);
+  line-height:1.8;
+  font-size:.92rem;
+}
+
+@media (max-width:1024px){
+  .contact-grid{grid-template-columns:1fr}
+  .contact-info-card{position:static;top:0}
+}
+@media (max-width:768px){
+  .form-row{grid-template-columns:1fr}
+  .contact-form,.contact-info-card{padding:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"><img src="thunayyan.jpg" alt="ث"></span>
+    <span>ثنيان خالد</span>
+  </a>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="about.html">عنّي</a></li>
+      <li><a href="achievements.html">إنجازاتي</a></li>
+      <li><a href="social.html">حساباتي</a></li>
+      <li><a href="partners.html">شركائي</a></li>
+      <li><a href="contact.html" class="active">تواصل معي</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" aria-label="القائمة">☰</button>
+</header>
+
+<main>
+  <div class="container">
+    <section class="page-hero">
+      <div class="breadcrumb">✉ التواصل</div>
+      <h1>لنصنع شيئاً <span class="accent">مميزاً</span></h1>
+      <p class="lead">للتعاونات التجارية، الرعايات، أو الاستفسارات - أنا متاح للحديث.</p>
+    </section>
+
+    <section>
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <h3>وسائل التواصل</h3>
+          <p>تواصل معي مباشرة عبر القنوات التالية، وسأرد عليك في أقرب وقت ممكن.</p>
+          
+          <a href="https://api.whatsapp.com/send/?phone=966566334500&text&type=phone_number&app_absent=0" target="_blank" class="contact-method">
+            <div class="method-icon">📱</div>
+            <div class="method-info">
+              <div class="lbl">واتساب الأعمال</div>
+              <div class="val">+966 56 633 4500</div>
+            </div>
+          </a>
+
+          <a href="mailto:business@toun16.com" class="contact-method">
+            <div class="method-icon">✉</div>
+            <div class="method-info">
+              <div class="lbl">البريد الإلكتروني</div>
+              <div class="val">business@toun16.com</div>
+            </div>
+          </a>
+
+          <a href="https://toun16.com" target="_blank" class="contact-method">
+            <div class="method-icon">◉</div>
+            <div class="method-info">
+              <div class="lbl">الموقع الرسمي</div>
+              <div class="val">toun16.com</div>
+            </div>
+          </a>
+
+          <a href="#" class="contact-method">
+            <div class="method-icon">◆</div>
+            <div class="method-info">
+              <div class="lbl">التراخيص</div>
+              <div class="val">موثوق + رخصة فال</div>
+            </div>
+          </a>
+
+          <div style="margin-top:1.5rem;padding:1rem 1.1rem;background:var(--bg-soft);border-radius:8px;border:1px solid var(--border)">
+            <div style="font-weight:700;color:var(--text);margin-bottom:.3rem;font-size:.88rem">📍 الموقع</div>
+            <div style="color:var(--text-soft);font-size:.88rem">المملكة العربية السعودية · الخبر</div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <h3>أرسل طلبك</h3>
+          <p>املأ النموذج وسأتواصل معك خلال ٢٤-٤٨ ساعة عمل.</p>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label>الاسم الكامل *</label>
+              <input type="text" placeholder="اسمك">
+            </div>
+            <div class="form-group">
+              <label>الشركة / العلامة *</label>
+              <input type="text" placeholder="اسم الشركة">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>البريد الإلكتروني *</label>
+              <input type="email" placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label>رقم الجوال</label>
+              <input type="tel" placeholder="+966 5X XXX XXXX">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>نوع التعاون *</label>
+            <select>
+              <option>اختر النوع</option>
+              <option>محتوى ممول (فلوق)</option>
+              <option>سفير علامة تجارية</option>
+              <option>حضور فعالية</option>
+              <option>حملة طويلة الأمد</option>
+              <option>إعلان على منصة محددة</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>الميزانية التقريبية</label>
+            <select>
+              <option>اختياري</option>
+              <option>أقل من ١٠,٠٠٠ ر.س</option>
+              <option>١٠,٠٠٠ - ٥٠,٠٠٠ ر.س</option>
+              <option>٥٠,٠٠٠ - ١٠٠,٠٠٠ ر.س</option>
+              <option>أكثر من ١٠٠,٠٠٠ ر.س</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>تفاصيل المشروع *</label>
+            <textarea placeholder="أخبرني عن مشروعك، أهدافك، والجدول الزمني..."></textarea>
+          </div>
+
+          <button type="button" class="submit-btn" onclick="alert('شكراً لتواصلك! سيتم الرد عليك قريباً.')">إرسال الطلب ←</button>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <div class="eyebrow reveal">أسئلة شائعة</div>
+        <h2 class="section-title reveal">أهم ما يسألني الشركاء</h2>
+
+        <details class="faq reveal">
+          <summary>كم تستغرق مدة الرد على الطلبات؟</summary>
+          <div class="answer">عادةً ما يتم الرد على طلبات التعاون خلال ٢٤ إلى ٤٨ ساعة عمل. للطلبات العاجلة، يُفضّل التواصل عبر واتساب الأعمال مباشرة.</div>
+        </details>
+
+        <details class="faq reveal">
+          <summary>هل تتعاون مع علامات تجارية خارج السعودية؟</summary>
+          <div class="answer">نعم، أتعاون مع علامات تجارية من جميع أنحاء العالم. سبق أن نفّذت حملات مع شركات سعودية، خليجية، عربية، وعالمية.</div>
+        </details>
+
+        <details class="faq reveal">
+          <summary>ما المنصات التي تشمل التعاونات؟</summary>
+          <div class="answer">يمكن تخصيص التعاون لمنصة واحدة (يوتيوب، سناب شات، انستقرام، إلخ) أو تنفيذ حملة شاملة عبر جميع المنصات حسب الحاجة.</div>
+        </details>
+
+        <details class="faq reveal">
+          <summary>هل لديك ترخيص رسمي لصناعة المحتوى؟</summary>
+          <div class="answer">نعم، لدي ترخيص موثوق من وزارة الإعلام، ورخصة الترفيه الفنية (فال) للأعمال الإعلامية.</div>
+        </details>
+
+        <details class="faq reveal">
+          <summary>كيف يتم تحديد الأسعار؟</summary>
+          <div class="answer">يعتمد التسعير على نوع المحتوى، المنصة المستخدمة، مدة الحملة، ومستوى الإنتاج المطلوب. يُرسل عرض سعر تفصيلي بعد مناقشة المشروع.</div>
+        </details>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">ثنيان خالد</div>
+    <div class="footer-quote">"Still The Best."</div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/channel/UCtAUHu0stm1w5Sw_m1CaIKw" target="_blank">▶</a>
+      <a href="https://www.instagram.com/thunayyan16" target="_blank">📷</a>
+      <a href="https://www.tiktok.com/@tounk16" target="_blank">♪</a>
+      <a href="https://x.com/Thunayyan16" target="_blank">𝕏</a>
+      <a href="https://www.snapchat.com/@toun16" target="_blank">👻</a>
+      <a href="https://kick.com/thunayyan16" target="_blank">⚡</a>
+      <a href="https://discord.com/invite/25SVM4dC" target="_blank">💬</a>
+    </div>
+    <div class="footer-copy">© ٢٠٢٦ ثنيان خالد · جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
